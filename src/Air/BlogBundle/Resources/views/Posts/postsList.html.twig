@@ -53,7 +53,7 @@
                     <img src="{{ asset('bundles/airblog/img/default-thumbnail.jpg') }}" alt="">
                 </div>
 
-                <p>{{ post.content|raw }}</p>
+                <p>{{ post.content|ab_shorten(300) }}</p>
 
                 <footer>
                     <a class="comments" href="#">Komentarzy (31)</a>

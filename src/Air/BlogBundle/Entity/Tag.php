@@ -3,12 +3,13 @@
 namespace Air\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Air\BlogBundle\Repository\TagRepository;
 
 /**
  * Class Category
  * @package Air\BlogBundle\Entity
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Air\BlogBundle\Repository\TagRepository")
  * @ORM\Table(name="blog_tags")
  */
 class Tag extends AbstractTaxonomy {

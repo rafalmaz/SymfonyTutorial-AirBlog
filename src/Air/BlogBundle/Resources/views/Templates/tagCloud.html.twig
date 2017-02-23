@@ -1,0 +1,8 @@
+<div class="tags">
+    {% for tag in tagList %}
+        <a style="font-size: {{ tag['fontSize'] }}rem"
+           href="{{ path('blog_tag', {'slug': tag['slug']}) }}">
+            {{ tag['name'] }}
+        </a>
+    {% endfor %}
+</div>

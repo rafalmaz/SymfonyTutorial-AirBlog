@@ -45,20 +45,17 @@
 
             <div class="menu">
                 <nav>
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">O MNIE</a></li>
-                        <li><a href="#">KONTAKT</a></li>
-                    </ul>
+                    {{ print_main_menu() }}
+                    {#<ul>#}
+                        {#<li><a href="#">Home</a></li>#}
+                        {#<li><a href="#">O mnie</a></li>#}
+                        {#<li><a href="#">Kontakt</a></li>#}
+                        {#<li><a href="#">Admin</a></li>#}
+                    {#</ul>#}
                 </nav>
 
-                <ul class="categories">
-                    <li><a href="#">Samoloty osobowe i pasażerskie</a></li>
-                    <li><a class="active" href="#">Samoloty odrzutowe</a></li>
-                    <li><a href="#">Samoloty wojskowe</a></li>
-                    <li><a href="#">Proy kosmiczne</a></li>
-                    <li><a href="#">Tajne rozwiązania</a></li>
-                </ul>
+
+                {{ print_categories_list() }}
 
                 <!--
                 <div class="user-panel">
@@ -107,29 +104,24 @@
                 <div class="right-side sidebar">
                     <div class="menu">
                         <h3>Kategorie</h3>
-                        <ul>
-                            <li><a href="#">Samoloty osobowe i pasażerskie</a></li>
-                            <li><a class="active" href="#">Samoloty odrzutowe</a></li>
-                            <li><a href="#">Samoloty wojskowe</a></li>
-                            <li><a href="#">Promy kosmiczne</a></li>
-                            <li><a href="#">Tajne rozwiązania</a></li>
-                        </ul>
+                        {{ print_categories_list() }}
                     </div>
 
                     <div class="tag-cloud">
                         <h3>Chmura tagów</h3>
-                        <div class="tags">
-                            <a style="font-size: 1.5rem" href="#">Advanced</a>
-                            <a style="font-size: 2.3rem" href="#">Blackbird</a>
-                            <a style="font-size: 1.3rem" href="#">Development</a>
-                            <a style="font-size: 2.3rem" href="#">Dwa</a>
-                            <a style="font-size: 2.3rem" href="#">Froom</a>
-                            <a style="font-size: 2rem" href="#">Lockheed</a>
-                            <a style="font-size: 1.5rem" href="#">Los</a>
-                            <a style="font-size: 1.3rem" href="#">Newadzie</a>
-                            <a style="font-size: 1.1rem" href="#">Palmdale</a>
-                            <a style="font-size: 1.8rem" href="#">Plant SR</a>
-                        </div>
+                        {{ print_tags_cloud() }}
+                        {#<div class="tags">#}
+                            {#<a style="font-size: 1.5rem" href="#">Advanced</a>#}
+                            {#<a style="font-size: 2.3rem" href="#">Blackbird</a>#}
+                            {#<a style="font-size: 1.3rem" href="#">Development</a>#}
+                            {#<a style="font-size: 2.3rem" href="#">Dwa</a>#}
+                            {#<a style="font-size: 2.3rem" href="#">Froom</a>#}
+                            {#<a style="font-size: 2rem" href="#">Lockheed</a>#}
+                            {#<a style="font-size: 1.5rem" href="#">Los</a>#}
+                            {#<a style="font-size: 1.3rem" href="#">Newadzie</a>#}
+                            {#<a style="font-size: 1.1rem" href="#">Palmdale</a>#}
+                            {#<a style="font-size: 1.8rem" href="#">Plant SR</a>#}
+                        {#</div>#}
                     </div>
 
                     <div class="list-widget">
@@ -152,12 +144,13 @@
 <footer id="footer">
     <div class="top">
         <div class="pos-center">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">O mnie</a></li>
-                <li><a href="#">Kontakt</a></li>
-                <li><a href="#">Admin</a></li>
-            </ul>
+            {{ print_main_menu() }}
+            {#<ul>#}
+                {#<li><a href="#">Home</a></li>#}
+                {#<li><a href="#">O mnie</a></li>#}
+                {#<li><a href="#">Kontakt</a></li>#}
+                {#<li><a href="#">Admin</a></li>#}
+            {#</ul>#}
         </div>
     </div>
 

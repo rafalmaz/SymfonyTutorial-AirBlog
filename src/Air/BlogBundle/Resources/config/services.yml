@@ -1,4 +1,12 @@
 services:
+
+# arguments - wstrzykuje serwisy do kontruktora klasy BlogExtension
+    air_blog.twig.extension.blog:
+        class: Air\BlogBundle\Twig\Extension\BlogExtension
+        arguments: ["@doctrine"]
+        tags:
+            - { name: twig.extension }
+
 #    air_blog.example:
 #        class: Air\BlogBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
