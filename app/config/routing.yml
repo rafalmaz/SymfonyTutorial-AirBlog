@@ -1,0 +1,8 @@
+# Ustawienie innej ścieżki do routingu (utrzymanie porządku i ustalenie kolejności wczytywania kontrolerów)
+air_blog:
+    resource: "@AirBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

@@ -1,0 +1,11 @@
+#Kolejność w routingu ma znaczenie, ponieważ elementy są sprawdzane od góry
+
+air_blog_pages:
+    resource: "@AirBlogBundle/Controller/PagesController.php"
+    type:     annotation
+    prefix:   /
+
+air_blog_posts:
+    resource: "@AirBlogBundle/Controller/PostsController.php"
+    type:     annotation
+    prefix:   /

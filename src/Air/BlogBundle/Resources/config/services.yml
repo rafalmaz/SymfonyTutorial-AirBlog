@@ -1,0 +1,4 @@
+services:
+#    air_blog.example:
+#        class: Air\BlogBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

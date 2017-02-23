@@ -1,0 +1,15 @@
+{% extends "AirBlogBundle::base.html.twig" %}
+
+{#Można ustawiać zmienne w szablonach w taki sposób#}
+{% set hideSidebar = true %}
+
+{% block pageTitle %}Błąd 500{% endblock %}
+
+{% block contentTitle %}Błąd 500{% endblock %}
+
+{% block content %}
+    <div class="error-page">
+        <img src="{{ asset('bundles/airblog/img/error500.png') }}" alt="error500">
+    </div>
+{% endblock %}
+
