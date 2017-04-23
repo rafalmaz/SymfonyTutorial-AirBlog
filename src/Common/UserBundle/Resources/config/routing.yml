@@ -1,0 +1,4 @@
+common_user:
+    resource: "@CommonUserBundle/Controller/LoginController.php"
+    type:     annotation
+    prefix:   /

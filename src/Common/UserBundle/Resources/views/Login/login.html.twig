@@ -1,0 +1,92 @@
+{# W tym szablonie ustawiam wygląd wybranych bloków i rozszerzam widok base.html.twig#}
+
+{% extends "AirBlogBundle::base.html.twig" %}
+
+{% set hideSidebar = true %}
+{% set hideSearch = true %}
+
+{% block pageTitle %}Logowanie i rejestracja{% endblock %}
+
+{% block contentTitle %}Logowanie i rejestracja{% endblock %}
+
+{% block content %}
+
+    {% if loginError is defined and loginError is not null %}
+        <div class="notification block">{{ loginError.message }}</div>
+    {% endif %}
+
+    <div class="pos-center">
+        <div class="login-register two-cols">
+            <div class="col col-bdr">
+
+                <h2 class="strong">Logowanie</h2>
+
+                <form class="login-form" action="{{ path('blog_login') }}" method="post">
+
+                    <div class="form-row">
+                        <label for="login"  class="required">Login</label>
+                        <input name="_username" id="login" type="text" value="{{ userName }}">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="passwd" class="required">Hasło</label>
+                        <input name="_password" id="passwd" type="password">
+                    </div>
+
+                    <label class="checkbox remember">
+                        <input type="checkbox"> Zapamiętaj mnie
+                    </label>
+
+                    <button class="btn-green submit">Zaloguj</button>
+                </form>
+
+                <div class="remember-pass-form">
+                    <h2 class="strong">Przypomnij hasło</h2>
+
+                    <form action="#" method="post">
+
+                        <div class="form-row">
+                            <label for="email" class="required">Twój email</label>
+                            <input id="email" type="text">
+                        </div>
+
+                        <button class="btn-green submit">Przypomnij</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h2 class="strong">Rejestracja</h2>
+
+                <form action="#" method="post">
+
+                    <div class="form-row">
+                        <label for="email" class="required">Email</label>
+                        <input type="text" id="email">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email" class="required">Nick</label>
+                        <input type="text" id="email">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="pass" class="required">Hasło</label>
+                        <input type="text" id="pass">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="passConf" class="required">Powtorz hasło</label>
+                        <input type="text" id="passConf">
+                    </div>
+
+                    <button class="btn-green submit">Zarejestruj</button>
+                </form>
+            </div>
+        </div>
+    </div> <!-- .content -->
+    <div class="clearfix"></div>
+    </div> <!-- .pos-center -->
+{% endblock %}

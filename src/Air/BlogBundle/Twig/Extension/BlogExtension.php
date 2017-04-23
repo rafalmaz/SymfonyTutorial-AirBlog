@@ -23,7 +23,7 @@ class BlogExtension extends \Twig_Extension {
     }
 
     public function getName() {
-        return 'air_blog_extension';
+        return 'needs_environment';
     }
 
     public function getFunctions() {

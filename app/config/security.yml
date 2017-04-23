@@ -1,9 +1,17 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
 security:
+    encoders:
+        Common\UserBundle\Entity\User:
+            #algorytm hashowania hasła
+            algorithm: bcrypt
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
+        blog_users:
+            entity:
+                class: CommonUserBundle:User
+                property: username
         in_memory:
             memory: ~
 
@@ -14,11 +22,15 @@ security:
             security: false
 
         main:
+            provider: blog_users
             anonymous: ~
-            # activate different ways to authenticate
+            http_basic: ~
+            form_login:
+                login_path: /login
+                check_path: /login
+                target_path_parameter: /
+                default_target_path: /
+            logout: { path: /logout, target: /login }
 
-            # http_basic: ~
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    access_control:
+         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
