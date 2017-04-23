@@ -30,7 +30,14 @@ security:
                 check_path: /login
                 target_path_parameter: /
                 default_target_path: /
-            logout: { path: /logout, target: /login }
+            logout:
+                path: /logout,
+                target: /login
+            remember_me:
+                secret:   '%secret%'
+                lifetime: 604800
+                path:     /
+                domain:   ~
 
     access_control:
          - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
