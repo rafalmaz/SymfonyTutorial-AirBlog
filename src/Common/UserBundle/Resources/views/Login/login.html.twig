@@ -21,24 +21,26 @@
 
                 <h2 class="strong">Logowanie</h2>
 
-                <form class="login-form" action="{{ path('blog_login') }}" method="post">
+                {#<form class="login-form" action="{{ path('blog_login') }}" method="post">#}
 
-                    <div class="form-row">
-                        <label for="login"  class="required">Login</label>
-                        <input name="_username" id="login" type="text" value="{{ userName }}">
-                    </div>
+                    {#<div class="form-row">#}
+                        {#<label for="login"  class="required">Login</label>#}
+                        {#<input name="_username" id="login" type="text" value="{{ userName }}">#}
+                    {#</div>#}
 
-                    <div class="form-row">
-                        <label for="passwd" class="required">Hasło</label>
-                        <input name="_password" id="passwd" type="password">
-                    </div>
+                    {#<div class="form-row">#}
+                        {#<label for="passwd" class="required">Hasło</label>#}
+                        {#<input name="_password" id="passwd" type="password">#}
+                    {#</div>#}
 
-                    <label class="checkbox remember">
-                        <input type="checkbox" name="_remember_me" checked> Zapamiętaj mnie
-                    </label>
+                    {#<label class="checkbox remember">#}
+                        {#<input type="checkbox" name="_remember_me" checked> Zapamiętaj mnie#}
+                    {#</label>#}
 
-                    <button class="btn-green submit">Zaloguj</button>
-                </form>
+                    {#<button class="btn-green submit">Zaloguj</button>#}
+                {#</form>#}
+                {% form_theme loginForm 'AirBlogBundle:Form:form_template.html.twig' %}
+                {{ form(loginForm, {'action' : path('blog_login') }) }}
 
                 <div class="remember-pass-form">
                     <h2 class="strong">Przypomnij hasło</h2>

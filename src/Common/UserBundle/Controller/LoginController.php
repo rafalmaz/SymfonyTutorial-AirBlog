@@ -5,6 +5,7 @@ namespace Common\UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Common\UserBundle\Form\Type\LoginType;
 
 class LoginController extends Controller
 {
@@ -22,10 +23,15 @@ class LoginController extends Controller
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
+        $loginForm = $this->createForm(new LoginType(), array(
+            'username' => $lastUsername
+        ));
+
+
         if (!$this->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY')) {
             return $this->render('CommonUserBundle:Login:login.html.twig', array(
                 'loginError' => $error,
-                'userName' => $lastUsername
+                'loginForm' => $loginForm->createView()
             ));
         }
         else {
